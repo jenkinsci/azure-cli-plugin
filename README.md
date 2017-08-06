@@ -31,12 +31,15 @@ To use this plugin to deploy to Azure Web App, first you need to have an Azure S
 
 ## Deploy using Pipeline
 
-You can also use this plugin in pipeline (Jenkinsfile). Here are some samples to use the plugin in pipeline script:
+You can also use this plugin with using the Jobs DSL. For example:
 
 To create a linux VM using the CLI:
 
 ```groovy
-az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20
+job('AzCommand') {
+  steps {
+        azCommand('servicePrincipalId', 
+                        ['az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20'])
+    }
+}
 ```
-
-For advanced options, you can use Jenkins Pipeline Syntax tool to generate a sample script.
