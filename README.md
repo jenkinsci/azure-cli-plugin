@@ -38,7 +38,7 @@ To create a linux VM using the CLI:
 ```groovy
 job('AzCommand') {
   steps {
-        azCommand('servicePrincipalId', 
+        azCommands('servicePrincipalId', 
                         ['az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20'])
     }
 }
