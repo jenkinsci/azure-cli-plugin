@@ -1,11 +1,20 @@
-<?jelly escape-by-default='true'?>
+
+<!--
+  ~ Copyright (c) Microsoft Corporation. All rights reserved.
+  ~ Licensed under the MIT License. See License.txt in the project root for
+  ~ license information.
+  -->
+  <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:c="/lib/credentials" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
 
-<f:entry title="Service Principal" field="principalCredentialId" >
-<c:select expressionAllowed="false"/>
-</f:entry>
-    <f:entry title="Commands" field="commands">
+<f:section title="Login to Azure">
+    <f:entry title="Service Principal " field="principalCredentialId">
+        <c:select expressionAllowed="false"/>
+    </f:entry>
+</f:section>
+<f:section title="Commands">
+    <f:entry field="commands">
         <f:repeatableProperty field="commands"  minimum="1" />
     </f:entry>
-
+</f:section>
 </j:jelly>

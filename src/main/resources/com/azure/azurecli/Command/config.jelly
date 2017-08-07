@@ -1,8 +1,22 @@
-<?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
 
-    <f:textbox field="script" default=""/>
-    <br/>
-    <f:repeatableDeleteButton value="DeleteCommand"/>
+<!--
+  ~ Copyright (c) Microsoft Corporation. All rights reserved.
+  ~ Licensed under the MIT License. See License.txt in the project root for
+  ~ license information.
+  -->
+  <?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+        <f:entry title="Command ">
+            <f:textbox field="script" default=""/>
+            <br/>
+        <f:repeatableDeleteButton value="Delete"/>
+        <f:advanced>
+            <f:section title="Export to environment variables">
+                <f:entry title="Variables ">
+                    <f:textbox field="exportVariablesString" default=""/>
+                </f:entry>
+            </f:section>
+        </f:advanced>
+                </f:entry>
 
 </j:jelly>

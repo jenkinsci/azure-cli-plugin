@@ -25,9 +25,9 @@ public class UtilsTest {
     @Test
     public void extractTokens() throws Exception {
 
-        String command = "az vm create {NAME}";
+        String command = "az vm create ${NAME}";
 
-        List<String> tokens = Utils.extractTokens(command);
+        List<String> tokens = com.azure.azurecli.helpers.Utils.extractTokens(command);
         Assert.assertEquals(tokens.size(), 1);
     }
 
@@ -36,17 +36,30 @@ public class UtilsTest {
 
         HashMap<String, String> replacements = new HashMap();
         replacements.put("NAME", VMName);
-        String command = "az vm create {NAME}";
+        String command = "az vm create ${NAME}";
 
-        String tokenized = Utils.tokenizeText(command, replacements);
-        Assert.assertEquals(tokenized, "az vm create \"" + VMName + '"');
+        String tokenized = com.azure.azurecli.helpers.Utils.tokenizeText(command, replacements);
+        Assert.assertEquals(tokenized, "az vm create " + VMName);
+    }
+
+    @Test
+    public void parseEnvVars() throws Exception {
+
+        String output = "location | LOCATION , name | NAME, /user.name | username";
+
+        HashMap<String, String> map = com.azure.azurecli.helpers.Utils.parseExportedVariables(output);
+        Assert.assertEquals(map.containsKey("location"), true);
+        Assert.assertEquals(map.containsKey("name"), true);
+        Assert.assertEquals(map.containsKey("/user.name"), true);
+
+
     }
 
     @Test
     public void getEnvVar() throws Exception {
 
         String envvar = "NAME";
-        String var = Utils.getEnvVar(null, envvar);
+        String var = com.azure.azurecli.helpers.Utils.getEnvVar(null, envvar);
         Assert.assertNotNull(var);
         Assert.assertEquals(var, VMName);
 

@@ -1,5 +1,12 @@
+/*
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License. See License.txt in the project root for
+ * license information.
+ */
+
 package com.azure.azurecli;
 
+import com.azure.azurecli.exceptions.AzureCloudException;
 import com.cloudbees.plugins.credentials.CredentialsProvider;
 import com.cloudbees.plugins.credentials.common.StandardListBoxModel;
 import com.cloudbees.plugins.credentials.domains.DomainRequirement;
@@ -15,6 +22,7 @@ import hudson.util.ListBoxModel;
 import jenkins.model.Jenkins;
 import jenkins.tasks.SimpleBuildStep;
 import net.sf.json.JSONObject;
+import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.AncestorInPath;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
@@ -32,7 +40,6 @@ public class AzureCLIBuilder extends Builder implements SimpleBuildStep {
     private List<Command> commands;
     private String principalCredentialId;
 
-    // Fields in config.jelly must match the parameter names in the "DataBoundConstructor"
     @DataBoundConstructor
     public AzureCLIBuilder(String principalCredentialId, List<Command> commands) {
         this.commands = commands;
@@ -45,7 +52,8 @@ public class AzureCLIBuilder extends Builder implements SimpleBuildStep {
         for (String command
                 :
                 strCommands) {
-            commands.add(new Command(command));
+            String[] cmdAndOutput = command.split("&&");
+            commands.add(new Command(cmdAndOutput[0].trim(), cmdAndOutput[1].trim()));
         }
         this.commands = commands;
         this.principalCredentialId = principalCredentialId;
@@ -64,57 +72,48 @@ public class AzureCLIBuilder extends Builder implements SimpleBuildStep {
     public void perform(Run<?, ?> build, FilePath workspace, Launcher launcher, TaskListener listener) throws IOException, InterruptedException {
 
         AzureCredentials.ServicePrincipal servicePrincipal = AzureCredentials.getServicePrincipal(principalCredentialId);
+        com.azure.azurecli.helpers.CredentialsCache credentialsCache = new com.azure.azurecli.helpers.CredentialsCache(servicePrincipal);
+        ShellExecuter shellExecuter = new ShellExecuter(listener.getLogger());
 
-        ShellExecuter shellExecuter = new ShellExecuter();
-        ExitResult loginResult = shellExecuter.login(servicePrincipal.getClientId(), servicePrincipal.getClientSecret(), servicePrincipal.getTenant());
-        if (loginResult.code == 0) {
-            listener.getLogger().println(loginResult.code + " " + loginResult.output);
+        try {
+            shellExecuter.login(credentialsCache);
             for (Command command
                     :
                     commands) {
 
-                List<String> tokens = Utils.extractTokens(command.script);
+                List<String> tokens = com.azure.azurecli.helpers.Utils.extractTokens(command.getScript());
                 HashMap<String, String> replacements = new HashMap<>();
                 for (String token
                         :
                         tokens) {
-                    String varValue = Utils.getEnvVar(build.getEnvironment(listener), token);
-                    if (varValue == null || varValue == "") {
-                        listener.error("Variable " + token + " is empty or null");
-                        build.setResult(Result.FAILURE);
-                        return;
+
+                    String varValue = com.azure.azurecli.helpers.Utils.getEnvVar(build.getEnvironment(listener), token);
+                    if (varValue == null || varValue.equals("")) {
+                        throw AzureCloudException.create("Variable " + token + " is empty or null");
                     }
                     replacements.put(token, varValue);
                 }
-                String commandText = Utils.tokenizeText(command.script, replacements);
-                ExitResult azResult = shellExecuter.executeAZ(commandText);
-                if (azResult.code != 0) {
-                    listener.error(azResult.output);
-                    build.setResult(Result.FAILURE);
-                    break;
-                } else {
-                    listener.getLogger().println(azResult.output);
-                }
+                String commandText = com.azure.azurecli.helpers.Utils.tokenizeText(command.getScript(), replacements);
+                String output = shellExecuter.executeAZ(commandText);
+                command.parseExportedVariables(listener.getLogger(), build, output);
+
             }
-        } else {
-            listener.fatalError(loginResult.output);
+        } catch (Exception e) {
+            listener.getLogger().println("Failure: " + e.getMessage());
             build.setResult(Result.FAILURE);
-
         }
-
     }
 
 
-    // Overridden for better type safety.
-    // If your plugin doesn't really define any property on Descriptor,
-    // you don't have to do this.
+
     @Override
     public DescriptorImpl getDescriptor() {
         return (DescriptorImpl) super.getDescriptor();
     }
 
 
-    @Extension // This indicates to Jenkins that this is an implementation of an extension point.
+    @Symbol("azureCLI")
+    @Extension
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
 
         public DescriptorImpl() {
@@ -128,9 +127,14 @@ public class AzureCLIBuilder extends Builder implements SimpleBuildStep {
 
         public String getDisplayName() {
             ShellExecuter executer = new ShellExecuter();
-            String output = executer.getVersion().output;
+            String output = null;
+            try {
+                output = executer.getVersion();
+            } catch (AzureCloudException e) {
+                return e.getMessage();
+            }
             String[] result = output.split(System.lineSeparator(), 2);
-            return "Azure CLI: " + result[0];
+            return result[0];
         }
 
         @Override

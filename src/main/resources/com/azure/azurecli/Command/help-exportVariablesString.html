@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright (c) Microsoft Corporation. All rights reserved.
+  ~ Licensed under the MIT License. See License.txt in the project root for
+  ~ license information.
+  -->
+<div>
+    Export the output of the command to environment variables
+    <br/>
+    The format: /"variable from JSON" | "desired environment variable name"
+    <br/>
+    For example:
+
+    Output:
+
+    {
+    "id": "/subscriptions/some-guid/resourceGroups/test",
+    "location": "northeurope",
+    "managedBy": null,
+    "name": "test",
+    "properties": {
+    "provisioningState": "Succeeded"
+    },
+    "tags": null
+    }
+
+    Environment Variable String:
+
+    /location|LOCATION , /name|NAME
+
+
+</div>
