@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Group-Id: com.azure
+Short-Name: azure-cli
+Long-Name: Azure CLI Plugin
+Plugin-Version: 0.1-SNAPSHOT (private-08/06/2017 15:02-torosent)
+Hudson-Version: 1.651.3
+Jenkins-Version: 1.651.3
+Mask-Classes: com.microsoft.azure.management.
+             com.google.common.
+PluginFirstClassLoader: true
+Plugin-Dependencies: plain-credentials:1.4,credentials:2.1.5,azure-cre
+ dentials:1.2,job-dsl:1.64;resolution:=optional
+Plugin-Developers: Tomer Rosenthal:torosent:torosent@microsoft.com
+Libraries: /Users/torosent/Desktop/projects/azure-cli/src/main/resourc
+ es,/Users/torosent/Desktop/projects/azure-cli/target/classes
+Resource-Path: /Users/torosent/Desktop/projects/azure-cli/src/main/web
+ app
+

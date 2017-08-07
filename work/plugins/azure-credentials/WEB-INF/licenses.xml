@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='azure-credentials' version='1.2'>
+    <l:dependency name='Azure Credentials' groupId='org.jenkins-ci.plugins' artifactId='azure-credentials' version='1.2'
+                  url='https://wiki.jenkins-ci.org/display/JENKINS/Azure+Credentials+plugin'>
+        <l:description>Manage Azure Service Principal credentials using Jenkins Credentials API</l:description>
+        <l:license name='MIT License' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Apache Commons Lang' groupId='org.apache.commons' artifactId='commons-lang3' version='3.4'
+                  url='http://commons.apache.org/proper/commons-lang/'>
+        <l:description>Apache Commons Lang, a package of Java utility classes for the
+            classes that are in java.lang's hierarchy, or are considered to be so
+            standard as to justify existence in java.lang.
+        </l:description>
+        <l:license name='Apache License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='JSch' groupId='com.jcraft' artifactId='jsch' version='0.1.50' url='http://www.jcraft.com/jsch/'>
+        <l:description>JSch is a pure Java implementation of SSH2</l:description>
+        <l:license name='Revised BSD' url='http://www.jcraft.com/jsch/LICENSE.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for CDN Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-cdn' version='1.0.0-beta5' url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure CDN SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='SLF4J Simple Binding' groupId='org.slf4j' artifactId='slf4j-simple' version='1.7.5'
+                  url='http://www.slf4j.org'>
+        <l:description>SLF4J Simple binding</l:description>
+        <l:license name='MIT License' url='http://www.opensource.org/licenses/mit-license.php'/>
+    </l:dependency>
+    <l:dependency name='OkHttp Logging Interceptor' groupId='com.squareup.okhttp3' artifactId='logging-interceptor'
+                  version='3.3.1' url='https://github.com/square/okhttp/logging-interceptor'>
+        <l:description>An HTTP+SPDY client for Android and Java applications</l:description>
+        <l:license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Resource Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-resources' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Resource Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Network Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-network' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Network Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Azure Java Client Authentication Library for AutoRest' groupId='com.microsoft.azure'
+                  artifactId='azure-client-authentication' version='1.0.0-beta5'
+                  url='https://github.com/Azure/autorest-clientruntime-for-java'>
+        <l:description>This package contains the authentication connectors to Active Directory for JDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK annotations' groupId='com.microsoft.azure' artifactId='api-annotations'
+                  version='0.0.1' url='https://github.com/Microsoft/java-api-annotations'>
+        <l:description>This package contains Microsoft Azure Management SDK annotations.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Commons Net' groupId='commons-net' artifactId='commons-net' version='3.3'
+                  url='http://commons.apache.org/proper/commons-net/'>
+        <l:description>Apache Commons Net library contains a collection of network utilities and protocol
+            implementations.
+            Supported protocols include: Echo, Finger, FTP, NNTP, NTP, POP3(S), SMTP(S), Telnet, Whois
+        </l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Batch Account Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-batch' version='1.0.0-beta5' url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Batch Account Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='rxjava' groupId='io.reactivex' artifactId='rxjava' version='1.2.4'
+                  url='https://github.com/ReactiveX/RxJava'>
+        <l:description>rxjava</l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Key Vault Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-keyvault' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Key Vault Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Bouncy Castle Provider' groupId='org.bouncycastle' artifactId='bcprov-jdk15on' version='1.47'
+                  url='http://www.bouncycastle.org/java.html'>
+        <l:description>The Bouncy Castle Crypto package is a Java implementation of cryptographic algorithms. This jar
+            contains JCE provider and lightweight API for the Bouncy Castle Cryptography APIs for JDK 1.5 to JDK 1.7.
+        </l:description>
+        <l:license name='Bouncy Castle Licence' url='http://www.bouncycastle.org/licence.html'/>
+    </l:dependency>
+    <l:dependency name='expect4j' groupId='com.github.cverges.expect4j' artifactId='expect4j' version='1.6'
+                  url='http://github.com/cverges/expect4j'>
+        <l:description>A Java implementation of the standard Expect library</l:description>
+        <l:license name='The Apache Software License, Version 2.0' url='http://www.apache.org/license/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for App Service Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-appservice' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure App Service Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Sql Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-sql' version='1.0.0-beta5' url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Sql Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='OAuth 2.0 SDK with OpenID Connect extensions' groupId='com.nimbusds'
+                  artifactId='oauth2-oidc-sdk' version='4.5'
+                  url='https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions'>
+        <l:description>OAuth 2.0 SDK with OpenID Connection extensions for developing
+            client and server applications.
+        </l:description>
+        <l:license name='Apache License, version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.html‎'/>
+    </l:dependency>
+    <l:dependency name='com.springsource.tcl.lang.jacl' groupId='net.sourceforge.tcljava'
+                  artifactId='com.springsource.tcl.lang.jacl' version='1.4.1' url=''>
+        <l:description/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Graph RBAC Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-graph-rbac' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Graph RBAC Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Storage Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-storage' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Storage Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Azure Java Client Runtime for AutoRest' groupId='com.microsoft.azure'
+                  artifactId='azure-client-runtime' version='1.0.0-beta5'
+                  url='https://github.com/Azure/autorest-clientruntime-for-java'>
+        <l:description>This package contains the basic runtime for AutoRest generated Azure Java clients.
+        </l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='OkHttp' groupId='com.squareup.okhttp3' artifactId='okhttp' version='3.3.1'
+                  url='https://github.com/square/okhttp/okhttp'>
+        <l:description>An HTTP+SPDY client for Android and Java applications</l:description>
+        <l:license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Converter: Jackson' groupId='com.squareup.retrofit2' artifactId='converter-jackson'
+                  version='2.0.2' url='http://github.com/square/retrofit/retrofit-converters/converter-jackson/'>
+        <l:description>Type-safe HTTP client for Android and Java by Square, Inc.</l:description>
+        <l:license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Joda-Time' groupId='joda-time' artifactId='joda-time' version='2.4'
+                  url='http://www.joda.org/joda-time/'>
+        <l:description>Date and time library to replace JDK date handling</l:description>
+        <l:license name='Apache 2' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Redis Cache Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-redis' version='1.0.0-beta5' url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Redis Cache SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Nimbus JOSE+JWT' groupId='com.nimbusds' artifactId='nimbus-jose-jwt' version='3.1.2'
+                  url='https://bitbucket.org/connect2id/nimbus-jose-jwt'>
+        <l:description>Java library for Javascript Object Signing and Encryption (JOSE) and
+            JSON Web Tokens (JWT)
+        </l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Gson' groupId='com.google.code.gson' artifactId='gson' version='2.2.4'
+                  url='http://code.google.com/p/google-gson/'>
+        <l:description>Google Gson library</l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='jackson-databind' groupId='com.fasterxml.jackson.core' artifactId='jackson-databind'
+                  version='2.7.2' url='http://github.com/FasterXML/jackson'>
+        <l:description>General data-binding functionality for Jackson: works on core streaming API</l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='com.springsource.tcl.lang' groupId='net.sourceforge.tcljava'
+                  artifactId='com.springsource.tcl.lang' version='1.4.1' url=''>
+        <l:description/>
+    </l:dependency>
+    <l:dependency name='Retrofit' groupId='com.squareup.retrofit2' artifactId='retrofit' version='2.0.2'
+                  url='http://github.com/square/retrofit/retrofit/'>
+        <l:description>Type-safe HTTP client for Android and Java by Square, Inc.</l:description>
+        <l:license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Okio' groupId='com.squareup.okio' artifactId='okio' version='1.8.0'
+                  url='https://github.com/square/okio/okio'>
+        <l:description>A modern I/O API for Java</l:description>
+        <l:license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Jackson-core' groupId='com.fasterxml.jackson.core' artifactId='jackson-core' version='2.7.2'
+                  url='https://github.com/FasterXML/jackson-core'>
+        <l:description>Core Jackson abstractions, basic JSON streaming API implementation</l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='OkHttp URLConnection' groupId='com.squareup.okhttp3' artifactId='okhttp-urlconnection'
+                  version='3.3.1' url='https://github.com/square/okhttp/okhttp-urlconnection'>
+        <l:description>An HTTP+SPDY client for Android and Java applications</l:description>
+        <l:license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Nimbus LangTag' groupId='com.nimbusds' artifactId='lang-tag' version='1.4'
+                  url='https://bitbucket.org/nimbusds/nimbus-langtag'>
+        <l:description>Java implementation of "Tags for Identifying Languages"
+            (RFC 5646).
+        </l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Traffic Manager Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-trafficmanager' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Traffic Manager Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Java Client Runtime for AutoRest' groupId='com.microsoft.rest' artifactId='client-runtime'
+                  version='1.0.0-beta5' url='https://github.com/Azure/autorest-clientruntime-for-java'>
+        <l:description>This package contains the basic runtime for AutoRest generated Java clients.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Jackson-datatype-Joda' groupId='com.fasterxml.jackson.datatype'
+                  artifactId='jackson-datatype-joda' version='2.7.2' url='http://wiki.fasterxml.com/JacksonModuleJoda'>
+        <l:description>Add-on module for Jackson (http://jackson.codehaus.org) to support
+            Joda (http://joda-time.sourceforge.net/) data types.
+        </l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='JSON Small and Fast Parser' groupId='net.minidev' artifactId='json-smart' version='1.1.1'
+                  url='http://json-smart/'>
+        <l:description>JSON (JavaScript Object Notation) is a lightweight data-interchange format.
+            It is easy for humans to read and write. It is easy for machines to parse and generate.
+            It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition
+            - December 1999. JSON is a text format that is completely language independent but uses
+            conventions that are familiar to programmers of the C-family of languages, including C, C++, C#,
+            Java, JavaScript, Perl, Python, and many others.
+            These properties make JSON an ideal data-interchange language.
+        </l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for Compute Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-compute' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure Compute Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Adapter: RxJava' groupId='com.squareup.retrofit2' artifactId='adapter-rxjava' version='2.0.2'
+                  url='http://github.com/square/retrofit/retrofit-adapters/adapter-rxjava/'>
+        <l:description>Type-safe HTTP client for Android and Java by Square, Inc.</l:description>
+        <l:license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Jackson-annotations' groupId='com.fasterxml.jackson.core' artifactId='jackson-annotations'
+                  version='2.7.0' url='http://github.com/FasterXML/jackson'>
+        <l:description>Core annotations used for value types, used by Jackson data binding package.</l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Apache ServiceMix :: Bundles :: oro' groupId='org.apache.servicemix.bundles'
+                  artifactId='org.apache.servicemix.bundles.oro' version='2.0.8_6'
+                  url='http://servicemix.apache.org/bundles-pom/org.apache.servicemix.bundles.oro/'>
+        <l:description>This OSGi bundle wraps oro 2.0.8 jar file.</l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='Guava: Google Core Libraries for Java' groupId='com.google.guava' artifactId='guava'
+                  version='18.0' url='http://code.google.com/p/guava-libraries/guava'>
+        <l:description>Guava is a suite of core and expanded libraries that include
+            utility classes, google's collections, io classes, and much
+            much more.
+
+            Guava has only one code dependency - javax.annotation,
+            per the JSR-305 spec.
+        </l:description>
+        <l:license name='The Apache Software License, Version 2.0'
+                   url='http://www.apache.org/licenses/LICENSE-2.0.txt'/>
+    </l:dependency>
+    <l:dependency name='adal4j' groupId='com.microsoft.azure' artifactId='adal4j' version='1.1.2'
+                  url='https://github.com/AzureAD/azure-activedirectory-library-for-java'>
+        <l:description>Azure active directory library for Java gives you the ability to add Windows Azure Active
+            Directory
+            authentication to your web application with just a few lines of additional code. Using our ADAL SDKs you
+            can quickly and easily extend your existing application to all the employees that use Windows Azure
+            AD and Active Directory on-premises using Active Directory Federation Services, including Office365
+            customers.
+        </l:description>
+        <l:license name='Apache License, Version 2.0' url=''/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK' groupId='com.microsoft.azure' artifactId='azure' version='1.0.0-beta5'
+                  url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft Azure SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+    <l:dependency name='Microsoft Azure SDK for DNS Management' groupId='com.microsoft.azure'
+                  artifactId='azure-mgmt-dns' version='1.0.0-beta5' url='https://github.com/Azure/azure-sdk-for-java'>
+        <l:description>This package contains Microsoft DNS Management SDK.</l:description>
+        <l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/>
+    </l:dependency>
+</l:dependencies>

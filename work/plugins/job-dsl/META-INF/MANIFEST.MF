@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Plugin-Dependencies: structs:1.6,script-security:1.25,vsphere-cloud:1.
+ 1.11;resolution:=optional,config-file-provider:2.15.4;resolution:=opt
+ ional,managed-scripts:1.3;resolution:=optional
+Long-Name: Job DSL
+Compatible-Since-Version: 1.64
+Plugin-Developers: Justin Ryan:quidryan:jryan@netflix.com,Andrew Harme
+ l-Law:andrewharmellaw:andrew@harmel-law.com,Daniel Spilker:daspilker:
+ mail@daniel-spilker.com,Matt Sheehan:sheehan:mr.sheehan@gmail.com
+Group-Id: org.jenkins-ci.plugins
+Extension-Name: job-dsl
+Plugin-Version: 1.64
+Jenkins-Version: 2.19
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin
+Short-Name: job-dsl
+

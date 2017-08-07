@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: kench
+Build-Jdk: 1.8.0_131
+Extension-Name: azure-credentials
+Specification-Title: Manage Azure Service Principal credentials using 
+ Jenkins Credentials API
+Implementation-Title: azure-credentials
+Implementation-Version: 1.2
+Group-Id: org.jenkins-ci.plugins
+Short-Name: azure-credentials
+Long-Name: Azure Credentials
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Azure+Credentials+plu
+ gin
+Plugin-Version: 1.2
+Hudson-Version: 1.625.3
+Jenkins-Version: 1.625.3
+Plugin-Dependencies: structs:1.5,credentials-binding:1.11,credentials:
+ 1.21
+Plugin-Developers: Arjun Roy Chaudhuri:arroyc_microsoft:arroyc@microso
+ ft.com,Claudiu Guiman:clguiman:clguiman@microsoft.com
+
