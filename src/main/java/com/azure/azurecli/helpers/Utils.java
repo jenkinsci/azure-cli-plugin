@@ -24,7 +24,7 @@ public class Utils {
         Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
-            tokens.add(matcher.group(0).replaceAll("\\$", "").replaceAll("\\{", "").replaceAll("}", ""));
+            tokens.add(normalizeText(matcher.group(0)));
         }
         return tokens;
     }
@@ -77,6 +77,13 @@ public class Utils {
                 environmentVariables.entrySet()) {
             build.addAction(new PublishEnvVarAction(var.getKey(), var.getValue()));
         }
+    }
+
+    private static String normalizeText(String text) {
+        text = text.replaceAll("\\$", "");
+        text = text.replaceAll("\\{", "");
+        text = text.replaceAll("}", "");
+        return text;
     }
 
     public String getREGEX() {
