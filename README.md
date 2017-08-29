@@ -63,6 +63,8 @@ Output:
   2. Nested property: `/properties/provisioningState|STATE`
   3. Multiple environment variables: `/publicIpAddress|PUBLIC_IP , /properties/provisioningState|STATE`
 
+![jenkins2](https://user-images.githubusercontent.com/17064840/29833536-6339620a-8cf4-11e7-9781-f4e33e208ea6.jpg)
+
 ## Deploy using Pipeline
 
 You can also use this plugin in pipeline (Jenkinsfile). Here are some samples to use the plugin in pipeline script:
