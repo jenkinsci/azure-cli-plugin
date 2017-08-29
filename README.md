@@ -70,7 +70,7 @@ You can also use this plugin in pipeline (Jenkinsfile). Here are some samples to
 To create a new resource group and provision a new VM:
 
 ```groovy
-azureCLI commands: [[exportVariablesString: '', script: 'az group create -n MyResourceGroup --location northeurope'], [exportVariablesString: '/publicIpAddress|PUBLIC_IP', script: 'az vm create -n ${VN_NAME} -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20']], principalCredentialId: '<credential_id>'
+azureCLI commands: [[exportVariablesString: '', script: 'az group create -n MyResourceGroup --location northeurope'], [exportVariablesString: '/publicIpAddress|PUBLIC_IP', script: 'az vm create -n ${VM_NAME} -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20']], principalCredentialId: '<credential_id>'
 ```
 
 For advanced options, you can use Jenkins Pipeline Syntax tool to generate a sample script.
