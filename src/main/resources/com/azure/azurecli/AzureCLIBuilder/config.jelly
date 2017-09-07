@@ -14,7 +14,7 @@
 </f:section>
 <f:section title="Commands">
     <f:entry field="commands">
-        <f:repeatableProperty field="commands"  minimum="1" />
+        <f:repeatableProperty field="commands"  minimum="1" header="Command" />
     </f:entry>
 </f:section>
 </j:jelly>
