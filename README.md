@@ -1,6 +1,8 @@
 # Azure CLI Jenkins Plugin
 
-A Jenkins plugin to use Azure CLI for managing Azure resources.
+A Jenkins plugin to use Azure CLI for managing Azure resources. 
+
+:star2: The advantage of this plugin that it let's you export the CLI result from each command to environment variables and to the next command.
 
 ## How to Install
 
@@ -63,6 +65,8 @@ Output:
   2. Nested property: `/properties/provisioningState|STATE`
   3. Multiple environment variables: `/publicIpAddress|PUBLIC_IP , /properties/provisioningState|STATE`
 
+![jenkins2](https://user-images.githubusercontent.com/17064840/29833536-6339620a-8cf4-11e7-9781-f4e33e208ea6.jpg)
+
 ## Deploy using Pipeline
 
 You can also use this plugin in pipeline (Jenkinsfile). Here are some samples to use the plugin in pipeline script:
@@ -70,7 +74,7 @@ You can also use this plugin in pipeline (Jenkinsfile). Here are some samples to
 To create a new resource group and provision a new VM:
 
 ```groovy
-azureCLI commands: [[exportVariablesString: '', script: 'az group create -n MyResourceGroup --location northeurope'], [exportVariablesString: '/publicIpAddress|PUBLIC_IP', script: 'az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20']], principalCredentialId: '<credential_id>'
+azureCLI commands: [[exportVariablesString: '', script: 'az group create -n MyResourceGroup --location northeurope'], [exportVariablesString: '/publicIpAddress|PUBLIC_IP', script: 'az vm create -n ${VM_NAME} -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20']], principalCredentialId: '<credential_id>'
 ```
 
 For advanced options, you can use Jenkins Pipeline Syntax tool to generate a sample script.
