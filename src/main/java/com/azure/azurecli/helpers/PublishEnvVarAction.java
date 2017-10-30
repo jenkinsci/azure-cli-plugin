@@ -7,6 +7,7 @@
 package com.azure.azurecli.helpers;
 
 import hudson.EnvVars;
+import hudson.model.Run;
 import hudson.model.AbstractBuild;
 import hudson.model.EnvironmentContributingAction;
 import hudson.model.InvisibleAction;
@@ -38,6 +39,13 @@ public class PublishEnvVarAction extends InvisibleAction implements EnvironmentC
      * @see hudson.model.EnvironmentContributingAction#buildEnvVars(hudson.model.AbstractBuild, hudson.EnvVars)
      */
     public void buildEnvVars(AbstractBuild<?, ?> build, EnvVars env) {
+        env.put(key, value);
+    }
+
+    /* (non-Javadoc)
+     * @see hudson.model.EnvironmentContributingAction#buildEnvironment(hudson.model.Run, hudson.EnvVars)
+     */
+    public void buildEnvironment(Run<?, ?> build, EnvVars env) {
         env.put(key, value);
     }
 
