@@ -94,7 +94,7 @@ public class AzureCLIBuilder extends Builder implements SimpleBuildStep {
                     replacements.put(token, varValue);
                 }
                 String commandText = com.azure.azurecli.helpers.Utils.tokenizeText(command.getScript(), replacements);
-                String output = shellExecuter.executeAZ(commandText);
+                String output = shellExecuter.executeAZ(commandText, true);
                 command.parseExportedVariables(listener.getLogger(), build, output);
 
             }

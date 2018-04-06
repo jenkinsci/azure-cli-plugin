@@ -28,9 +28,9 @@ public class ShellExecuter {
     public void login(com.azure.azurecli.helpers.CredentialsCache credentialsCache) throws AzureCredentialsValidationException {
         String command = "az login --service-principal -u " + credentialsCache.clientId + " -p " + credentialsCache.clientSecret + " --tenant " + credentialsCache.tenantId;
         try {
-            executeAZ(command);
+            executeAZ(command, false);
             command = "az account set -s " + credentialsCache.subscriptionId;
-            executeAZ(command);
+            executeAZ(command, false);
         } catch (AzureCloudException e) {
             throw new AzureCredentialsValidationException(e.getMessage());
         }
@@ -45,15 +45,16 @@ public class ShellExecuter {
         throw AzureCloudException.create("Azure CLI not found");
     }
 
-    public String executeAZ(String command) throws AzureCloudException {
-        logger.println("Running: " + command);
+    public String executeAZ(String command, Boolean printCommand) throws AzureCloudException {
+        if (printCommand) {
+            logger.println("Running: " + command);
+        }
         ExitResult result = executeCommand(command);
         if (result.code == 0) {
             logger.println(result.output);
             return result.output;
         }
         throw AzureCloudException.create(result.output);
-
     }
 
     private static class ExitResult {

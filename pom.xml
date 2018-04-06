@@ -45,7 +45,7 @@
         <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
-    <tag>azure-cli-0.6</tag>
+    <tag>azure-cli-0.7</tag>
   </scm>
     <repositories>
         <repository>
