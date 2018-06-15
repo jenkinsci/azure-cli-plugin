@@ -8,6 +8,7 @@ package com.azure.azurecli;
 import com.azure.azurecli.exceptions.AzureCloudException;
 import com.azure.azurecli.exceptions.AzureCredentialsValidationException;
 
+import java.io.File;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -74,7 +75,11 @@ public class ShellExecuter {
         Process p;
         int exitCode = -1;
         try {
-            p = Runtime.getRuntime().exec(command);
+            if (File.pathSeparatorChar == ':') {
+                p = Runtime.getRuntime().exec(command);
+            } else {
+                p = Runtime.getRuntime().exec("cmd.exe /c \"" + command + "\"");
+            }
             p.waitFor();
 
             InputStream stream;
