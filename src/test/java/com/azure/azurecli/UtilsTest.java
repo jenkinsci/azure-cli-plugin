@@ -23,6 +23,14 @@ public class UtilsTest {
     }
 
     @Test
+    public void testAzVersion() throws Exception {
+        ShellExecuter shellExecuter = new ShellExecuter();
+        String version = shellExecuter.getVersion();
+        Assert.assertTrue(version.contains("azure-cli"));
+
+    }
+
+    @Test
     public void extractTokens() throws Exception {
 
         String command = "az vm create ${NAME}";
