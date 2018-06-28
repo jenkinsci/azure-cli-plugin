@@ -81,8 +81,6 @@ public class ShellExecuter {
                         "/bin/sh",
                         "-c",
                         command).start();
-
-               // p = Runtime.getRuntime().exec("sh -c " + command);
             } else {
                 p = Runtime.getRuntime().exec("cmd.exe /c \"" + command + "\"");
             }
