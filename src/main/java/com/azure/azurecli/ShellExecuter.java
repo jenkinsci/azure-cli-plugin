@@ -70,13 +70,19 @@ public class ShellExecuter {
 
     private ExitResult executeCommand(String command) {
 
+
         StringBuffer output = new StringBuffer();
 
         Process p;
         int exitCode = -1;
         try {
             if (File.pathSeparatorChar == ':') {
-                p = Runtime.getRuntime().exec(command);
+                 p = new ProcessBuilder(
+                        "/bin/sh",
+                        "-c",
+                        command).start();
+
+               // p = Runtime.getRuntime().exec("sh -c " + command);
             } else {
                 p = Runtime.getRuntime().exec("cmd.exe /c \"" + command + "\"");
             }
