@@ -1,6 +1,8 @@
 # Azure CLI Jenkins Plugin
 
-A Jenkins plugin to use Azure CLI for managing Azure resources. 
+A Jenkins plugin to use Azure CLI for managing Azure resources.
+
+:exclamation: This is NOT an official Microsoft plugin
 
 :star2: The advantage of this plugin that it let's you export the CLI result from each command to environment variables and to the next command.
 
