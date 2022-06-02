@@ -21,7 +21,7 @@
         <azure-credentials>1.2</azure-credentials>
         <credentials>2.1.5</credentials>
         <structs>1.9</structs>
-        <job-dsl>1.64</job-dsl>
+        <job-dsl>1.72</job-dsl>
     </properties>
 
     <name>Azure CLI Plugin</name>
