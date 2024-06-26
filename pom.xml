@@ -20,7 +20,7 @@
         <powermock.version>1.7.0RC2</powermock.version>
         <azure-credentials>1.2</azure-credentials>
         <credentials>2.1.5</credentials>
-        <structs>1.9</structs>
+        <structs>338.v848422169819</structs>
         <job-dsl>1.64</job-dsl>
     </properties>
 
